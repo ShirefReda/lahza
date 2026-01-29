@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لحظة باي | الإرشادات</title>
+    <script>
+        if (performance.navigation.type === 1) {
+            const timestamp = new Date().getTime();
+            const currentUrl = window.location.pathname;
+            const newUrl = currentUrl + '?v=' + timestamp;
+            window.location.href = newUrl;
+        }
+    </script>
+    <style>
+        /* Bottom Navigation Styles */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+    
+        .nav-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #666;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 8px 12px;
+        }
+    
+        .nav-item:hover {
+            color: #2196F3;
+            transform: translateY(-2px);
+        }
+    
+        .nav-item.active {
+            color: #2196F3;
+        }
+    
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 4px;
+            transition: transform 0.3s ease;
+        }
+    
+        .nav-text {
+            font-size: 12px;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #1a2433 0%, #2d3748 100%);
+            min-height: 100vh;
+            margin-bottom: 80px;
+            padding: 2rem 1rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            color: white;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            color: white;
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question.active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-toggle::before,
+        .faq-toggle::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .faq-toggle::before {
+            width: 2px;
+            height: 16px;
+            top: 4px;
+            left: 11px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-toggle::after {
+            width: 16px;
+            height: 2px;
+            top: 11px;
+            left: 4px;
+        }
+
+        .faq-question.active .faq-toggle::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0 1.2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            line-height: 1.6;
+        }
+
+        .faq-answer.active {
+            padding: 1.2rem;
+            max-height: 500px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <div class="youtube-section">
+            <h2 class="section-title">قناتنا على يوتيوب</h2>
+            <div class="youtube-content">
+                <p class="youtube-description">شاهد فيديوهاتنا المهمة على يوتيوب للاستفادة القصوى من التطبيق. نقدم شروحات تفصيلية وإرشادات أساسية يجب مشاهدتها.</p>
+                <a href="https://www.youtube.com/@LahzaPay" target="_blank" class="youtube-button">
+                    <svg style="width: 24px; height: 24px; margin-left: 8px;" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
+                        <path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#1a2433"/>
+                    </svg>
+                    فتح القناة
+                </a>
+            </div>
+        </div>
+
+        <h1 class="page-title">أمن المعلومات وخصوصية البيانات</h1>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                هل يتم تشغيل التطبيق وفقا لمعايير تنظيمية أو رقابية؟
+                <div class="faq-toggle"></div>
+            </div>
+            <div class="faq-answer">
+                يعتبر تطبيق لحظة باي تطبيق مرخص من البنك المركزي المصري لتقديم خدمة الدفع عبر شبكة المدفوعات اللحظية لزيادة عمليات التحويل بين البنوك لحظياً على مدار 24 ساعة. بما يضمن الالتزام الكامل بكافة الضوابط الرقابية والمتطلبات الفنية المتعلقة بأمن المعلومات وخصوصية المعلومات وحماية حقوق العملاء
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                كيف يمكن للتطبيق تنفيذ معاملات على حسابات العملاء الخاصة بالبنوك الأعضاء؟
+                <div class="faq-toggle"></div>
+            </div>
+            <div class="faq-answer">
+                يتم تنفيذ المعاملات من خلال واجهة برمجة تطبيقات آمنة ومرخصة من البنك المركزي المصري، مع الالتزام بكافة معايير الأمان والتشفير المطلوبة.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                كيف تتم حماية بيانات مستخدم التطبيق؟
+                <div class="faq-toggle"></div>
+            </div>
+            <div class="faq-answer">
+                يتم تشفير جميع البيانات باستخدام أحدث تقنيات التشفير المعتمدة عالمياً، كما يتم تخزينها في خوادم آمنة ومحمية وفقاً لأعلى معايير الأمان.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                ما هي طبيعة البيانات التي يتم الحصول عليها من مستخدم التطبيق؟
+                <div class="faq-toggle"></div>
+            </div>
+            <div class="faq-answer">
+                يتم جمع البيانات الأساسية فقط اللازمة لتشغيل الخدمة مثل الاسم ورقم الهاتف، مع الالتزام التام بسياسة الخصوصية وحماية البيانات.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                هل يمكن للتطبيق الدخول إلى بيانات العميل بالبنك و/أو حساب العميل بالبنك؟
+                <div class="faq-toggle"></div>
+            </div>
+            <div class="faq-answer">
+                لا يمكن للتطبيق الوصول إلى بيانات العميل البنكية إلا من خلال الواجهات المصرح بها من البنك المركزي وبموافقة صريحة من العميل.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // منع التخزين المؤقت للروابط
+            const navItems = document.querySelectorAll('.nav-item');
+            const timestamp = new Date().getTime();
+            
+            navItems.forEach(item => {
+                const originalHref = item.getAttribute('href');
+                item.setAttribute('href', originalHref + '?v=' + timestamp);
+            });
+            
+            // تأثير الريبل وتحديد العنصر النشط
+            function createRipple(event) {
+                const button = event.currentTarget;
+                const ripple = document.createElement('span');
+                const diameter = Math.max(button.clientWidth, button.clientHeight);
+                const radius = diameter / 2;
+                
+                ripple.style.width = ripple.style.height = `${diameter}px`;
+                ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+                ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
+                ripple.classList.add('ripple');
+                
+                const existingRipple = button.querySelector('.ripple');
+                if (existingRipple) {
+                    existingRipple.remove();
+                }
+                
+                button.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            }
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    createRipple(e);
+                    
+                    navItems.forEach(navItem => {
+                        navItem.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                    
+                    if (this.dataset.page === 'home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // تفعيل أزرار الأسئلة الشائعة
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    // إزالة الحالة النشطة من جميع الأسئلة الأخرى
+                    faqQuestions.forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.classList.remove('active');
+                        }
+                    });
+                    
+                    // تبديل الحالة النشطة للسؤال الحالي
+                    question.classList.toggle('active');
+                    const answer = question.nextElementSibling;
+                    answer.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+    <style>
+        .youtube-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .youtube-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .youtube-description {
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        .youtube-button {
+            display: inline-flex;
+            align-items: center;
+            background: #ff0000;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .youtube-button:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+    <div id="bottom-nav-container"></div>
+    <script>
+        // Load bottom navigation
+        fetch('bottom-nav.html')
+            .then(response => response.text())
+            .then(data => {
+                // Extract the nav element from the loaded HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const nav = doc.querySelector('.bottom-nav');
+                if (nav) {
+                    document.getElementById('bottom-nav-container').innerHTML = nav.outerHTML;
+                } else {
+                    console.error('Navigation element not found in bottom-nav.html');
+                }
+            })
+            .catch(error => console.error('Error loading bottom navigation:', error));
+    </script>
+</body>
+</html>

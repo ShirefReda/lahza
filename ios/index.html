@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0;url=index.html?v=<?=time()?>">
+    <title>Redirecting to Latest Version</title>
+    <script>
+        // JavaScript method to force loading the latest version of index.html without caching
+        window.location.href = 'iosinstall.html?v=' + new Date().getTime();
+    </script>
+</head>
+<body>
+    <!-- Fallback message in case JavaScript is disabled -->
+    <p>If you are not redirected automatically, follow this <a href="index.html?v=<?=time()?>">link to the latest version</a>.</p>
+</body>
+</html>

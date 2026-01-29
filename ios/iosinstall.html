@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Enhanced iOS specific meta tags -->
+ <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="LahzaPay">
+    
+    <!-- Explicit icon meta tags for iOS with absolute paths -->
+    <link rel="apple-touch-icon" href="http://lahzapay.com/ios//images/icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://lahzapay.com/ios//images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="http://lahzapay.com/ios//images/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://lahzapay.com/ios//images/icon-180x180.png">
+    
+    <!-- Fallback icons with relative paths -->
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/icon-512x512.png">
+    
+    <!-- Ensure proper MIME type handling -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="theme-color" content="#007bff">
+    <title>LahzaPay - تثبيت التطبيق</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap">
+    
+    <style>
+	* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: fixed;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            /* Add padding for status bar and bottom bar */
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .instruction {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .instruction img {
+            max-width: 80%;
+            height: auto;
+            margin: 15px auto;
+            border-radius: 8px;
+            -webkit-user-drag: none;
+            display: block;
+        }
+
+        .step {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .platform-specific {
+            display: none;
+        }
+
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @media (display-mode: standalone) {
+            .install-instructions {
+                display: none;
+            }
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LahzaPay تطبيق</h1>
+        
+        <div class="install-instructions">
+            <div id="ios-instructions" class="platform-specific instruction">
+                <h2>تثبيت التطبيق على iPhone</h2>
+                <div class="step">١. اضغط على زر المشاركة</div>
+                <img src="images/ios-share.png" alt="زر المشاركة في iOS" />
+                <div class="step">٢. اختر "إضافة إلى الشاشة الرئيسية"</div>
+                <div class="step">٣. اضغط "إضافة"</div>
+            </div>
+
+            <div id="android-instructions" class="platform-specific instruction">
+                <h2>تثبيت التطبيق على Android</h2>
+                <div class="step">١. اضغط على "تثبيت التطبيق"</div>
+                <button id="install-button" class="btn">تثبيت التطبيق</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Force HTTP for iOS icon handling
+        if (window.location.protocol === 'https:' && /iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            const newUrl = window.location.href.replace('https:', 'http:');
+            // Only redirect if not already redirected (prevent loops)
+            if (!sessionStorage.getItem('redirected')) {
+                sessionStorage.setItem('redirected', 'true');
+                window.location.href = newUrl;
+            }
+        }
+		
+		document.body.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+
+        // Handle orientation changes
+        window.addEventListener('orientationchange', function() {
+            window.scrollTo(0, 0);
+            document.body.style.height = window.innerHeight + 'px';
+        });
+
+        // Force full screen on iOS
+        if (navigator.standalone) {
+            document.documentElement.style.height = '100vh';
+            document.body.style.height = '100vh';
+        }
+
+        // Platform detection and display logic
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const isAndroid = /Android/.test(navigator.userAgent);
+        
+        // Show relevant instructions
+        document.getElementById('ios-instructions').style.display = isIOS ? 'block' : 'none';
+        document.getElementById('android-instructions').style.display = isAndroid ? 'block' : 'none';
+
+        // Handle Android installation
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('install-button').style.display = 'block';
+        });
+
+        document.getElementById('install-button').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+            }
+        });
+
+        // Redirect non-mobile users
+        if (!isIOS && !isAndroid) {
+            window.location.href = "https://lahzapay.com";
+        }
+
+        // Change URL without page reload
+        history.pushState({}, "", "/ios/app/main.html");
+
+        // Hide installation instructions if already installed
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+            document.querySelector('.install-instructions').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="لحظة باي lahzapay lahza lahzaPAY LAHZAPY لحظة لحظةباي لحظة باى">
+    <meta name="description" content="أدفع فواتيرك في لحظة قي اي وقت ومن اي مكان ">
+    <title>لحظة باي | الصفحة الرئيسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        .scroll-indicator {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-arrow {
+            color: var(--primary-color);
+            font-size: 36px !important;
+            opacity: 0.8;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Fix bottom navigation bar to prevent overlapping content */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding-bottom: env(safe-area-inset-bottom);
+            background: rgba(30, 38, 56, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Add margin to prevent content being hidden under bottom nav */
+        .footer {
+            margin-bottom: 70px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/LOGO1080x1080.png" alt="لحظة باي" class="logo">
+                <a href="./index.html" class="logo-text">لـحـظـة <span>بـاي</span></a>
+            </div>
+            <nav class="nav-buttons">
+                <a href="./instructions.html" class="nav-button">
+                    <span class="material-symbols-rounded">info</span>
+                    إرشادات
+                </a>
+                <a href="./app.html" class="nav-button">
+                    <span class="material-symbols-rounded">phone_android</span>
+                    التطبيق
+                </a>
+                <a href="./Contact.html" class="nav-button">
+                    <span class="material-symbols-rounded">call</span>
+                    اتصل بنا
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">دلوقتي مع لحظة</h1>     
+            <p class="hero-subtitle">أدفع فواتيرك في لحظة قي اي وقت ومن اي مكان</p>
+            <section class="cta-section">
+                <a href="./instructions.html" class="cta-button">
+                    <span class="material-symbols-rounded">rocket_launch</span>
+                    ابدأ رحلتك مع لحظة باي
+                </a>
+                <div class="scroll-indicator">
+                    <span class="material-symbols-rounded scroll-arrow">keyboard_double_arrow_down</span>
+                </div>
+            </section>
+        </section>
+
+        <section class="features-grid">
+           
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="material-symbols-rounded">security</span>
+                </div>
+                <h3 class="feature-title">حماية وأمان</h3>
+                <p class="feature-description">نضمن حماية كاملة لبياناتك ومعاملاتك المالية</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="material-symbols-rounded">support_agent</span>
+                </div>
+                <h3 class="feature-title">دعم متواصل</h3>
+                <p class="feature-description">فريق دعم فني متواجد على مدار الساعة لمساعدتك</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://facebook.com/lahzapay" class="social-link facebook" target="_blank">
+                    <span class="material-symbols-rounded social-icon">public</span>
+                    فيسبوك
+                </a>
+                <a href="https://wa.me/message/CJFMUD4RJYZWI1" class="social-link whatsapp" target="_blank">
+                    <span class="material-symbols-rounded social-icon">chat</span>
+                    واتساب
+                </a>
+                <a href="https://chat.whatsapp.com/GAL5eRvcgGR3WqzYv8zV5m" class="social-link whatsapp-group" target="_blank">
+                    <span class="material-symbols-rounded social-icon">forum</span>
+                    جروب واتساب
+                </a>
+            </div>
+            <div class="contact-info">
+                تواصل معنا:
+                <a href="tel:01208487416">
+                    <span class="material-symbols-rounded">phone</span>
+                    01208487416
+                </a>
+            </div>
+            <div class="copyright">
+                © 2024 - 2025 لحظة باي. جميع الحقوق محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <div class="bottom-nav-content">
+            <a href="./index.html" class="bottom-nav-item active">
+                <span class="material-symbols-rounded bottom-nav-icon">home</span>
+                الرئيسية
+            </a>
+            <a href="./app.html" class="bottom-nav-item">
+                <span class="material-symbols-rounded bottom-nav-icon">apps</span>
+                التطبيق
+            </a>
+            <a href="./instructions.html" class="bottom-nav-item">
+                <span class="material-symbols-rounded bottom-nav-icon">info</span>
+                إرشادات
+            </a>
+            <a href="./Contact.html" class="bottom-nav-item">
+                <span class="material-symbols-rounded bottom-nav-icon">call</span>
+                اتصل بنا
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bottom navigation active state
+            const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+            bottomNavItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    bottomNavItems.forEach(navItem => navItem.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Prevent caching of links
+            const links = document.querySelectorAll('a');
+            const timestamp = new Date().getTime();
+            
+            links.forEach(link => {
+                const originalHref = link.getAttribute('href');
+                if (originalHref && !originalHref.startsWith('http') && !originalHref.startsWith('tel:')) {
+                    link.setAttribute('href', originalHref + '?v=' + timestamp);
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

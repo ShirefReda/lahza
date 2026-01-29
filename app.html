@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="لحظة باي lahzapay lahza lahzaPAY LAHZAPY لحظة لحظةباي لحظة باى">
+    <meta name="description" content="لحظة باي هي منصة الكترونية تضيف اليك ربط محفظتك الالكترونية بحسابك البنكي بسهولة">
+    <title>لحظة باي | تحميل التطبيق</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        .app-section {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+
+        .app-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .app-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-color);
+        }
+
+        .app-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.8;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .app-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .app-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all var(--animation-timing) var(--animation-curve);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .app-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-button.ios {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .app-button.android {
+            background: rgba(164, 198, 57, 0.2);
+        }
+
+        .app-button.android:hover {
+            background: rgba(164, 198, 57, 0.3);
+        }
+
+        .app-icon {
+            font-size: 32px !important;
+        }
+
+        .app-info {
+            margin-top: var(--spacing-lg);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .app-title {
+                font-size: 2rem;
+            }
+
+            .app-subtitle {
+                font-size: 1rem;
+            }
+
+            .app-buttons {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app-title {
+                font-size: 1.75rem;
+            }
+
+            .app-button {
+                padding: var(--spacing-sm);
+                font-size: 1rem;
+            }
+        }
+
+        /* Fix bottom navigation bar to prevent overlapping content */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding-bottom: env(safe-area-inset-bottom);
+            background: rgba(30, 38, 56, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Add margin to prevent content being hidden under bottom nav */
+        .footer {
+            margin-bottom: 70px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/LOGO1080x1080.png" alt="لحظة باي" class="logo">
+                <a href="./index.html" class="logo-text">لـحـظـة <span>بـاي</span></a>
+            </div>
+            <nav class="nav-buttons">
+                <a href="./instructions.html" class="nav-button">
+                    <span class="material-symbols-rounded">info</span>
+                    إرشادات
+                </a>
+                <a href="./app.html" class="nav-button">
+                    <span class="material-symbols-rounded">phone_android</span>
+                    التطبيق
+                </a>
+                <a href="./Contact.html" class="nav-button">
+                    <span class="material-symbols-rounded">call</span>
+                    اتصل بنا
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="app-section">
+            <div class="app-content">
+                <h1 class="app-title">تحميل تطبيق لحظة باي</h1>
+                <p class="app-subtitle">
+                    حمل تطبيق لحظة باي الآن واستمتع بتجربة سهلة وآمنة لتحويل واستلام الأموال من المحافظ الإلكترونية إلى حسابك البنكي
+                </p>
+                
+                <div class="app-buttons">
+                    <a href="https://ios.lahzapay.com/" class="app-button ios">
+                        <span class="material-symbols-rounded app-icon">phone_iphone</span>
+                        تحميل تطبيق iOS
+                    </a>
+                    <a href="https://lahzapay.com/apk/LahzaPayLATEST.apk" class="app-button android">
+                        <span class="material-symbols-rounded app-icon">android</span>
+                        تحميل تطبيق Android
+                    </a>
+                </div>
+                
+                <p class="app-info">
+                    * التطبيق متوافق مع نظامي iOS 12.0 وأحدث، وAndroid 6.0 وأحدث
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://facebook.com/lahzapay" class="social-link facebook" target="_blank">
+                    <span class="material-symbols-rounded social-icon">public</span>
+                    فيسبوك
+                </a>
+                <a href="https://wa.me/message/CJFMUD4RJYZWI1" class="social-link whatsapp" target="_blank">
+                    <span class="material-symbols-rounded social-icon">chat</span>
+                    واتساب
+                </a>
+                <a href="https://chat.whatsapp.com/GAL5eRvcgGR3WqzYv8zV5m" class="social-link whatsapp-group" target="_blank">
+                    <span class="material-symbols-rounded social-icon">forum</span>
+                    جروب واتساب
+                </a>
+            </div>
+            <div class="contact-info">
+                تواصل معنا:
+                <a href="tel:01208487416">
+                    <span class="material-symbols-rounded">phone</span>
+                    01208487416
+                </a>
+            </div>
+            <div class="copyright">
+                © 2024 - 2025 لحظة باي. جميع الحقوق محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <div class="bottom-nav-content">
+            <a href="./index.html" class="bottom-nav-item">
+                <span class="material-symbols-rounded bottom-nav-icon">home</span>
+                الرئيسية
+            </a>
+            <a href="./app.html" class="bottom-nav-item active">
+                <span class="material-symbols-rounded bottom-nav-icon">apps</span>
+                التطبيق
+            </a>
+            <a href="./instructions.html" class="bottom-nav-item">
+                <span class="material-symbols-rounded bottom-nav-icon">info</span>
+                إرشادات
+            </a>
+            <a href="./Contact.html" class="bottom-nav-item">
+                <span class="material-symbols-rounded bottom-nav-icon">call</span>
+                اتصل بنا
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bottom navigation active state
+            const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+            bottomNavItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    bottomNavItems.forEach(navItem => navItem.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Prevent caching of links
+            const links = document.querySelectorAll('a');
+            const timestamp = new Date().getTime();
+            
+            links.forEach(link => {
+                const originalHref = link.getAttribute('href');
+                if (originalHref && !originalHref.startsWith('http') && !originalHref.startsWith('tel:')) {
+                    link.setAttribute('href', originalHref + '?v=' + timestamp);
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
